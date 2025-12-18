@@ -40,4 +40,5 @@ erDiagram
         string forma_pagamento
         string status
     }
-}
+```
+
