@@ -41,4 +41,3 @@ erDiagram
         string status
     }
 }
-
