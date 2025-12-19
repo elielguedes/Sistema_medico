@@ -1,3 +1,4 @@
+```mermaid
 erDiagram
     USUARIOS ||--o{ AGENDAMENTOS : "cria"
     CLIENTES ||--o{ AGENDAMENTOS : "possui"
@@ -51,3 +52,4 @@ erDiagram
         string status
         datetime data_pagamento
     }
+
