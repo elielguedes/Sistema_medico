@@ -1,55 +1,45 @@
 ```mermaid
 erDiagram
-    USUARIOS ||--o{ AGENDAMENTOS : "cria"
-    CLIENTES ||--o{ AGENDAMENTOS : "possui"
-    SERVICOS ||--o{ AGENDAMENTOS : "é_agendado_em"
-    AGENDAMENTOS ||--o| PAGAMENTOS : "gera"
+    USUARIOS ||--o{ AGENDAMENTO : "cria"
+    CLIENTES ||--o{ AGENDAMENTO : "agenda"
+    SERVICOS ||--o{ AGENDAMENTO : "inclui"
+    AGENDAMENTO ||--o{ PAGAMENTO : "paga"
 
     USUARIOS {
-        int id PK
+        int id_usuario PK
         string nome
         string email
         string senha
-        string perfil
-        boolean ativo
+        int telefone
     }
 
     CLIENTES {
         int id PK
         string nome
         string email
-        string telefone
+        string senha
         string cpf
-        boolean ativo
     }
 
     SERVICOS {
-        int id PK
-        string nome
-        string descricao
-        decimal preco
-        int duracao_min
-        boolean ativo
+        int id_servico PK
+        string receita_medica
+        string consulta
+        string cirurgia
     }
 
-    AGENDAMENTOS {
+    AGENDAMENTO {
         int id PK
-        int usuario_id FK
         int cliente_id FK
         int servico_id FK
         date data
-        time hora_inicio
-        time hora_fim
-        string status
-        string observacoes
     }
 
-    PAGAMENTOS {
-        int id PK
+    PAGAMENTO {
+        int id_pagamento PK
         int agendamento_id FK
-        decimal valor
         string forma_pagamento
         string status
-        datetime data_pagamento
     }
+
 
