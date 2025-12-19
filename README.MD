@@ -1,44 +1,53 @@
-## 📊 Diagrama ER - Modelagem de Dados
-
-```mermaid
 erDiagram
-    USUARIOS ||--o{ SERVICOS : "cria"
-    CLIENTES ||--o{ AGENDAMENTO : "agenda"
-    SERVICOS ||--o{ AGENDAMENTO : "inclui"
-    AGENDAMENTO ||--o{ PAGAMENTO : "paga"
+    USUARIOS ||--o{ AGENDAMENTOS : "cria"
+    CLIENTES ||--o{ AGENDAMENTOS : "possui"
+    SERVICOS ||--o{ AGENDAMENTOS : "é_agendado_em"
+    AGENDAMENTOS ||--o| PAGAMENTOS : "gera"
 
     USUARIOS {
-        int id_usuario PK
+        int id PK
         string nome
         string email
         string senha
-        int telefone
+        string perfil
+        boolean ativo
     }
+
     CLIENTES {
         int id PK
         string nome
         string email
-        string senha
+        string telefone
         string cpf
+        boolean ativo
     }
+
     SERVICOS {
-        int id_servico PK
-        string receita_medica
-        string consulta
-        string cirurgia
-    }
-    AGENDAMENTO {
         int id PK
+        string nome
+        string descricao
+        decimal preco
+        int duracao_min
+        boolean ativo
+    }
+
+    AGENDAMENTOS {
+        int id PK
+        int usuario_id FK
         int cliente_id FK
         int servico_id FK
-        int pagamento_id FK
         date data
+        time hora_inicio
+        time hora_fim
+        string status
+        string observacoes
     }
-    PAGAMENTO {
-        int id_pagamento PK
+
+    PAGAMENTOS {
+        int id PK
         int agendamento_id FK
+        decimal valor
         string forma_pagamento
         string status
+        datetime data_pagamento
     }
-```
-
