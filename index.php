@@ -98,7 +98,7 @@
                         include('editar-usuarios.php');
                         break;
                     case 'salvar-usuarios':
-                        include('salver-usuarios.php');
+                        include('salvar-usuarios.php');
                         break;
                     //clientes
                     case 'cadastrar-clientes':
@@ -111,7 +111,7 @@
                         include('editar-clientes.php');
                         break;
                     case 'salvar-clientes':
-                        include('salver-clientes.php');
+                        include('salvar-clientes.php');
                         break;
                     //servicos
                     case 'cadastrar-servicos':
@@ -124,7 +124,7 @@
                         include('editar-servicos.php');
                         break;
                     case 'salvar-servicos':
-                        include('salver-servicos.php');
+                        include('salvar-servicos.php');
                         break;
                     //agendamento
                     case 'cadastrar-agendamento':
@@ -137,7 +137,7 @@
                         include('editar-agendamento.php');
                         break;
                     case 'salvar-agendamento':
-                        include('salver-agendamento.php');
+                        include('salvar-agendamento.php');
                         break;
                     //paguamento
                     case 'cadastrar-paguamento':
@@ -150,7 +150,7 @@
                         include('editar-paguamento.php');
                         break;
                     case 'salvar-paguamento':
-                        include('salver-paguamento.php');
+                        include('salvar-paguamento.php');
                         break;
                 }
                 ?>
