@@ -1,5 +1,4 @@
 <h1>cadastrar-cliente</h1>
-<h1>cadastrar usuarios</h1>
 <form action="?page=salvar-clientes" method="POST">
     <input type="hidden" name="acao" value="cadastrar">
     <div class="mb-3">
