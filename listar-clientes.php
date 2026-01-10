@@ -22,7 +22,7 @@ if ($res && $res->num_rows > 0) {
     print "<tbody>";
 
     while ($row = $res->fetch_object()) {
-        $id = $row->id_usuario;
+        $id = $row->id_cliente;
         $nome = $row->nome;
         $email = $row->email;
         $senha = $row->senha;
@@ -35,8 +35,8 @@ if ($res && $res->num_rows > 0) {
         print "<td>$senha</td>";
         print "<td>$cpf</td>";
         print "<td>";
-        print "<button class='btn btn-success' onclick=\"location.href='?page=editar-clientes&id_usuario={$id}';\">Editar</button> ";
-        print "<button class='btn btn-danger' onclick=\"if (confirm('tem certeza que deseja excluir?')){location.href='?page=salvar-clientes&acao=excluir&id_usuario={$id}';}\">excluir</button>";
+        print "<button class='btn btn-success' onclick=\"location.href='?page=editar-clientes&id_cliente={$id}';\">Editar</button> ";
+        print "<button class='btn btn-danger' onclick=\"if (confirm('tem certeza que deseja excluir?')){location.href='?page=salvar-clientes&acao=excluir&id_cliente={$id}';}\">excluir</button>";
         print "</td>";
         print "</tr>";
     }

@@ -28,10 +28,10 @@ switch ($_REQUEST['acao']) {
         $res = $conn->query($sql);
 
         if ($res) {
-            print "<script>alert('Cadastrou com sucesso');</script>";
+            print "<script>alert('Editou com sucesso');</script>";
             print "<script>location.href='?page=listar-usuarios';</script>";
         } else {
-            print "<script>alert('Não cadastrou');</script>";
+            print "<script>alert('Não editou');</script>";
             print "<script>location.href='?page=listar-usuarios';</script>";
         }
         break;
@@ -44,15 +44,9 @@ switch ($_REQUEST['acao']) {
             print "<script>alert('Excluiu com sucesso');</script>";
             print "<script>location.href='?page=listar-usuarios';</script>";
         } else {
-            print "<script>alert('Não cadastrou');</script>";
+            print "<script>alert('Não excluiu');</script>";
             print "<script>location.href='?page=listar-usuarios';</script>";
         }
         break;
-}
-
-var_dump($_REQUEST);
-
-if (!$res) {
-    echo "Erro MySQL: " . $conn->error;
 }
 ?>

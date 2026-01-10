@@ -28,15 +28,15 @@ switch ($_REQUEST['acao']) {
         $res = $conn->query($sql);
 
         if ($res) {
-            print "<script>alert('Cadastrou com sucesso');</script>";
+            print "<script>alert('Editou com sucesso');</script>";
             print "<script>location.href='?page=listar-clientes';</script>";
         } else {
-            print "<script>alert('Não cadastrou');</script>";
+            print "<script>alert('Não aditou');</script>";
             print "<script>location.href='?page=listar-clientes';</script>";
         }
         break;
     case 'excluir':
-        $id = $_REQUEST['id_usuario'];
+        $id = $_REQUEST['id_cliente'];
         $sql = "DELETE FROM clientes WHERE id_cliente='$id'";
 
         $res = $conn->query($sql);

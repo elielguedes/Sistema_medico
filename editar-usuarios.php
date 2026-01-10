@@ -1,6 +1,14 @@
 <h1>cadastrar usuarios</h1>
+<?php
+$sql = "SELECT * FROM usuarios WHERE id_usuario";
+
+$res = $conn->query($sql);
+
+$row = $res->fetch_object();
+?>
 <form action="?page=salvar-usuarios" method="POST">
-    <input type="hidden" name="acao" value="cadastrar">
+    <input type="hidden" name="acao" value="editar">
+    <input type="hidden" name="id_usuario" value="<?php print $row->id_usuario; ?>">
     <div class="mb-3">
         <label>Usuario
             <input type="text" name="nome" class="form-control">

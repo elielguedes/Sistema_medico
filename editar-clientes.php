@@ -1,6 +1,14 @@
 <h1>cadastrar clientes</h1>
-<form action="?page=salvar-usuarios" method="POST">
-    <input type="hidden" name="acao" value="cadastrar">
+<?php
+$sql = "SELECT * FROM clientes WHERE id_cliente";
+
+$res = $conn->query($sql);
+
+$row = $res->fetch_object();
+?>
+<form action="?page=salvar-clientes" method="POST">
+    <input type="hidden" name="acao" value="editar">
+    <input type="hidden" name="id_cliente" value="<?php print $row->id_cliente; ?>">
     <div class="mb-3">
         <label>Nome
             <input type="text" name="nome" class="form-control">
